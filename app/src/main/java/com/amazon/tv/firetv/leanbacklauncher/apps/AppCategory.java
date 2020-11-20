@@ -30,8 +30,10 @@ public enum AppCategory {
         return valueOf(name.toUpperCase().trim());
     }
 
+    public static final AppCategory[] VALUES = values();
+
     static {
-        for (AppCategory type : values()) {
+        for (AppCategory type : VALUES) {
             intToType.put(type.code, type);
         }
     }

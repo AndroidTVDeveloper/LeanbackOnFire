@@ -58,7 +58,7 @@ public class ConnectivityListener {
         }
     }
 
-    @TargetApi(23)
+    @android.support.annotation.RequiresApi(23)
     private static int getLevel(SignalStrength signalStrength) {
         LinkageError e;
         try {
