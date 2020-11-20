@@ -40,7 +40,6 @@ import android.view.ViewGroup.OnHierarchyChangeListener;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.view.accessibility.AccessibilityManager;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.core.app.ActivityCompat;
@@ -71,7 +70,6 @@ import com.amazon.tv.leanbacklauncher.apps.AppsAdapter;
 import com.amazon.tv.leanbacklauncher.apps.AppsManager;
 import com.amazon.tv.leanbacklauncher.apps.BannerView;
 import com.amazon.tv.leanbacklauncher.apps.OnEditModeChangedListener;
-import com.amazon.tv.leanbacklauncher.clock.ClockView;
 import com.amazon.tv.leanbacklauncher.logging.LeanbackLauncherEventLogger;
 import com.amazon.tv.leanbacklauncher.notifications.HomeScreenMessaging;
 import com.amazon.tv.leanbacklauncher.notifications.HomeScreenMessaging.ChangeListener;

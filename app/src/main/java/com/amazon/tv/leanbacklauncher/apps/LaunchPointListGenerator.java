@@ -16,7 +16,6 @@ import com.amazon.tv.firetv.leanbacklauncher.apps.AppCategory;
 import com.amazon.tv.firetv.leanbacklauncher.util.FireTVUtils;
 import com.amazon.tv.firetv.leanbacklauncher.util.SettingsUtil;
 import com.amazon.tv.firetv.leanbacklauncher.util.SharedPreferencesUtil;
-import com.amazon.tv.leanbacklauncher.BuildConfig;
 import com.amazon.tv.leanbacklauncher.R;
 import com.amazon.tv.leanbacklauncher.util.Util;
 
