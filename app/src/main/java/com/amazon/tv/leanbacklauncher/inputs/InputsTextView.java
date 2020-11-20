@@ -65,7 +65,7 @@ public final class InputsTextView extends AppCompatTextView {
     }
 
     private void setTextSize(TypedValue value) {
-        setTextSize((value.data >> 0) & 15, TypedValue.complexToFloat(value.data));
+        setTextSize((value.data) & 15, TypedValue.complexToFloat(value.data));
     }
 
     private void setPaddingBottom(TypedValue value) {

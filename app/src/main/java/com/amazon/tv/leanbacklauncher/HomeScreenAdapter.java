@@ -375,7 +375,7 @@ public class HomeScreenAdapter extends Adapter<HomeScreenAdapter.HomeViewHolder>
         }
     }
 
-    public ArrayList<HomeScreenRow> getAllRows() {
+    public ArrayList getAllRows() {
         return new ArrayList(this.mAllRowsList);
     }
 
@@ -572,7 +572,7 @@ public class HomeScreenAdapter extends Adapter<HomeScreenAdapter.HomeViewHolder>
                     categories.add(AppCategory.GAME);
                 if (!enabledCategories.contains(AppCategory.MUSIC))
                     categories.add(AppCategory.MUSIC);
-                return new AppsAdapter(this.mMainActivity, this.mRecommendationsAdapter, categories.toArray(new AppCategory[categories.size()]));
+                return new AppsAdapter(this.mMainActivity, this.mRecommendationsAdapter, categories.toArray(new AppCategory[0]));
             case FAVORITES:
                 return new FavoritesAdapter(this.mMainActivity, this.mRecommendationsAdapter);
             case VIDEO:

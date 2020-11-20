@@ -47,12 +47,12 @@ public class RecommendationImageLoaderFactory implements ModelLoaderFactory<Reco
     }
 
     public ModelLoader<RecommendationImageKey, Bitmap> build(MultiModelLoaderFactory multiFactory) {
-        return new ModelLoader<RecommendationImageKey, Bitmap>() {
+        return new ModelLoader() {
             public boolean handles(RecommendationImageKey recommendationImageKey) {
                 return true;
             }
 
-            public LoadData<Bitmap> buildLoadData(RecommendationImageKey recommendationImageKey, int width, int height, Options options) {
+            public LoadData buildLoadData(RecommendationImageKey recommendationImageKey, int width, int height, Options options) {
                 return new LoadData(recommendationImageKey, new RecommendationImageFetcher(RecommendationImageLoaderFactory.this.mLoader, recommendationImageKey));
             }
         };

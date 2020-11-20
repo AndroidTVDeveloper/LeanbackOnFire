@@ -152,7 +152,7 @@ public abstract class ForwardingAnimator<T extends Animator> extends Animator im
         }
     }
 
-    public ArrayList<AnimatorListener> getListeners() {
+    public ArrayList getListeners() {
         if (this.mListeners == null) {
             return new ArrayList();
         }

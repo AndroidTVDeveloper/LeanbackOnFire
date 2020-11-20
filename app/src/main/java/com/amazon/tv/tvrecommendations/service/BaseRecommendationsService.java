@@ -90,12 +90,12 @@ public abstract class BaseRecommendationsService extends Service {
 
         public String[] getRecommendationsPackages() {
             List<String> list = BaseRecommendationsService.this.mManager.getRecommendationsPackages();
-            return list.toArray(new String[list.size()]);
+            return list.toArray(new String[0]);
         }
 
         public String[] getBlacklistedPackages() {
             List<String> list = BaseRecommendationsService.this.mManager.getBlacklistedPackages();
-            return list.toArray(new String[list.size()]);
+            return list.toArray(new String[0]);
         }
 
         public void setBlacklistedPackages(String[] blacklist) {

@@ -77,7 +77,7 @@ public class LegacyUpdatePreferenceFragment extends GuidedStepSupportFragment {
         }
         Double lastVersionDouble;
         try { lastVersionDouble = Double.parseDouble(lastVersion); } catch (NumberFormatException npe) { lastVersionDouble = 0d; }
-        Double currentVersionDouble;
+        double currentVersionDouble;
         try { currentVersionDouble = Double.parseDouble(BuildConfig.VERSION_NAME); } catch (NumberFormatException npe) { currentVersionDouble = 0d; }
 
         GuidedAction actionInfo = findActionById(1);

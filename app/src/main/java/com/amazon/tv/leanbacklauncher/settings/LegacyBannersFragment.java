@@ -161,6 +161,6 @@ public class LegacyBannersFragment extends GuidedStepSupportFragment {
     }
 
     private String hexStringColor(int color) {
-        return String.format("#%08X", (0xFFFFFFFF & color));
+        return String.format("#%08X", (color));
     }
 }
