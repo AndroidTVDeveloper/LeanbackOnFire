@@ -69,9 +69,8 @@ public final class EditModeMassFadeAnimator extends PropagatingAnimator<EditMode
     }
 
     private void addViews(MainActivity activity) {
-        Iterator it = activity.getHomeAdapter().getAllRows().iterator();
-        while (it.hasNext()) {
-            View activeFrame = ((HomeScreenRow) it.next()).getRowView();
+        for (Object o : activity.getHomeAdapter().getAllRows()) {
+            View activeFrame = ((HomeScreenRow) o).getRowView();
             if (activeFrame instanceof ActiveFrame) {
                 for (int i = 0; i < ((ActiveFrame) activeFrame).getChildCount(); i++) {
                     View rowView = ((ActiveFrame) activeFrame).getChildAt(i);

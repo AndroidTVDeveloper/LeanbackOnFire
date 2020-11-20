@@ -32,6 +32,7 @@ class AppUsageStatistics {
         try {
             mPrivilegedAppDir = new File(Environment.getRootDirectory(), "priv-app").getCanonicalPath();
         } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -46,7 +47,7 @@ class AppUsageStatistics {
         }
         Double v = this.mAppUsageScore.get(packageName);
         if (v != null) {
-            return v.doubleValue();
+            return v;
         }
         return 0.0d;
     }
@@ -61,6 +62,7 @@ class AppUsageStatistics {
                     privApps.add(pi.packageName);
                 }
             } catch (NameNotFoundException e) {
+                e.printStackTrace();
             }
         }
         return privApps;
@@ -77,18 +79,17 @@ class AppUsageStatistics {
         addToHistogram(map, this.mUsageStatsManager.queryUsageStats(1, cal.getTimeInMillis(), to));
         cal.add(6, -23);
         addToHistogram(map, this.mUsageStatsManager.queryUsageStats(2, cal.getTimeInMillis(), to));
-        Iterator it = getInstalledPrivApps().iterator();
-        while (it.hasNext()) {
-            map.remove(it.next());
+        for (String s : getInstalledPrivApps()) {
+            map.remove(s);
         }
         long totalTif = 0;
         for (i = 0; i < map.size(); i++) {
-            totalTif += map.valueAt(i).longValue();
+            totalTif += map.valueAt(i);
         }
         ArrayMap<String, Double> adjustment = new ArrayMap();
         if (totalTif > 0) {
             for (i = 0; i < map.size(); i++) {
-                adjustment.put(map.keyAt(i), Double.valueOf(((double) map.valueAt(i).longValue()) / ((double) totalTif)));
+                adjustment.put(map.keyAt(i), Double.valueOf(((double) map.valueAt(i)) / ((double) totalTif)));
             }
         }
         return adjustment;
@@ -109,7 +110,7 @@ class AppUsageStatistics {
                 if (v == null) {
                     histogram.put(packageName, Long.valueOf(tif));
                 } else {
-                    histogram.put(packageName, Long.valueOf(v.longValue() + tif));
+                    histogram.put(packageName, Long.valueOf(v + tif));
                 }
             }
         }

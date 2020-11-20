@@ -271,6 +271,7 @@ public class NotificationCardView extends BaseCardView implements DimmableItem, 
             setMainImage(image);
             setBadgeImage(res.getDrawable(rec.getBadgeIcon(), null));
         } catch (NameNotFoundException e) {
+            e.printStackTrace();
         }
     }
 

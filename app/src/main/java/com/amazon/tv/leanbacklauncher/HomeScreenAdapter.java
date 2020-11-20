@@ -132,9 +132,8 @@ public class HomeScreenAdapter extends Adapter<HomeScreenAdapter.HomeViewHolder>
     }
 
     public void setRowAlphas(int alpha) {
-        Iterator it = this.mAllRowsList.iterator();
-        while (it.hasNext()) {
-            View activeFrame = ((HomeScreenRow) it.next()).getRowView();
+        for (HomeScreenRow homeScreenRow : this.mAllRowsList) {
+            View activeFrame = homeScreenRow.getRowView();
             if (activeFrame instanceof ActiveFrame) {
                 for (int i = 0; i < ((ActiveFrame) activeFrame).getChildCount(); i++) {
                     View rowView = ((ActiveFrame) activeFrame).getChildAt(i);
@@ -529,9 +528,7 @@ public class HomeScreenAdapter extends Adapter<HomeScreenAdapter.HomeViewHolder>
     }
 
     public void prepareEditMode(int rowType) {
-        Iterator it = this.mAllRowsList.iterator();
-        while (it.hasNext()) {
-            HomeScreenRow row = (HomeScreenRow) it.next();
+        for (HomeScreenRow row : this.mAllRowsList) {
             if (row.getType().getCode() == rowType) {
                 View activeFrame = row.getRowView();
                 if (activeFrame instanceof ActiveFrame) {

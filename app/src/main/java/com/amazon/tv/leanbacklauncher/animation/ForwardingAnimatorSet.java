@@ -12,9 +12,7 @@ public abstract class ForwardingAnimatorSet extends ForwardingAnimator<AnimatorS
     }
 
     public void reset() {
-        Iterator it = this.mDelegate.getChildAnimations().iterator();
-        while (it.hasNext()) {
-            Animator animation = (Animator) it.next();
+        for (Animator animation : this.mDelegate.getChildAnimations()) {
             if (animation instanceof Resettable) {
                 ((Resettable) animation).reset();
             }
@@ -22,9 +20,7 @@ public abstract class ForwardingAnimatorSet extends ForwardingAnimator<AnimatorS
     }
 
     public void include(View target) {
-        Iterator it = this.mDelegate.getChildAnimations().iterator();
-        while (it.hasNext()) {
-            Animator animation = (Animator) it.next();
+        for (Animator animation : this.mDelegate.getChildAnimations()) {
             if (animation instanceof Joinable) {
                 ((Joinable) animation).include(target);
             }
@@ -32,9 +28,7 @@ public abstract class ForwardingAnimatorSet extends ForwardingAnimator<AnimatorS
     }
 
     public void exclude(View target) {
-        Iterator it = this.mDelegate.getChildAnimations().iterator();
-        while (it.hasNext()) {
-            Animator animation = (Animator) it.next();
+        for (Animator animation : this.mDelegate.getChildAnimations()) {
             if (animation instanceof Joinable) {
                 ((Joinable) animation).exclude(target);
             }
@@ -43,9 +37,8 @@ public abstract class ForwardingAnimatorSet extends ForwardingAnimator<AnimatorS
 
     public String toString() {
         StringBuilder buf = new StringBuilder().append(getClass().getSimpleName()).append('@').append(Integer.toHexString(hashCode())).append('{');
-        Iterator it = this.mDelegate.getChildAnimations().iterator();
-        while (it.hasNext()) {
-            buf.append("\n    ").append(it.next().toString().replaceAll("\n", "\n    "));
+        for (Animator animator : this.mDelegate.getChildAnimations()) {
+            buf.append("\n    ").append(animator.toString().replaceAll("\n", "\n    "));
         }
         return buf.append("\n}").toString();
     }

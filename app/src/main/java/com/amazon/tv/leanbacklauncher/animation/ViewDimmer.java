@@ -145,7 +145,7 @@ public class ViewDimmer {
         if (this.mTextViews != null) {
             size = this.mTextViews.size();
             for (i = 0; i < size; i++) {
-                this.mTextViews.get(i).setTextColor(getDimmedColor(this.mOriginalTextColors.get(i).intValue(), level));
+                this.mTextViews.get(i).setTextColor(getDimmedColor(this.mOriginalTextColors.get(i), level));
             }
         }
         if (this.mPlayingIndicatorViews != null) {

@@ -116,6 +116,7 @@ public class SearchOrbView extends FrameLayout implements IdleListener, SearchPa
                 return true;
             }
         } catch (NameNotFoundException e) {
+            e.printStackTrace();
         }
         return false;
     }

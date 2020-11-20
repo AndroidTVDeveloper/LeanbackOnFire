@@ -249,18 +249,16 @@ public final class MassSlideAnimator extends PropagatingAnimator<MassSlideAnimat
     public void setupStartValues() {
         if (size() == 0) {
             addViews(this.mRoot);
-            Iterator it = this.mRows.iterator();
-            while (it.hasNext()) {
-                ((HorizontalGridView) it.next()).setAnimateChildLayout(false);
+            for (HorizontalGridView mRow : this.mRows) {
+                mRow.setAnimateChildLayout(false);
             }
         }
         super.setupStartValues();
     }
 
     public void reset() {
-        Iterator it = this.mRows.iterator();
-        while (it.hasNext()) {
-            ((HorizontalGridView) it.next()).setAnimateChildLayout(true);
+        for (HorizontalGridView mRow : this.mRows) {
+            mRow.setAnimateChildLayout(true);
         }
         super.reset();
         for (int i = size() - 1; i >= 0; i--) {

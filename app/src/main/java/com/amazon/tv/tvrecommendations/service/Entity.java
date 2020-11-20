@@ -59,20 +59,20 @@ class Entity {
                 lastOpened = Long.valueOf(0);
             }
         }
-        return lastOpened.longValue();
+        return lastOpened;
     }
 
     public long getOrder(String component) {
         Long rankOrder = this.mRankOrder.get(component);
-        if ((rankOrder == null || rankOrder.longValue() == 0) && this.mRankOrder.keySet().size() == 1) {
+        if ((rankOrder == null || rankOrder == 0) && this.mRankOrder.keySet().size() == 1) {
             rankOrder = this.mRankOrder.get(null);
             if (rankOrder == null) {
                 rankOrder = Long.valueOf(0);
             }
-            setOrder(component, rankOrder.longValue());
+            setOrder(component, rankOrder);
         }
         if (rankOrder != null) {
-            return rankOrder.longValue();
+            return rankOrder;
         }
         return 0;
     }

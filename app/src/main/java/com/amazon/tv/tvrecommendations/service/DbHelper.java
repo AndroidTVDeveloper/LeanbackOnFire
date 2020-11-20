@@ -91,7 +91,7 @@ public class DbHelper extends SQLiteOpenHelper {
                     }
                     long lastOpened = lastOpenedIndex == -1 ? 0 : c.getLong(lastOpenedIndex);
                     synchronized (DbHelper.this.mLock) {
-                        if (DbHelper.this.mMostRecentTimeStamp.longValue() < lastOpened) {
+                        if (DbHelper.this.mMostRecentTimeStamp < lastOpened) {
                             DbHelper.this.mMostRecentTimeStamp = Long.valueOf(lastOpened);
                         }
                     }
@@ -266,9 +266,7 @@ public class DbHelper extends SQLiteOpenHelper {
             }
             this.mGroups = new HashMap();
             this.mActiveDayBuffers = new HashMap();
-            Iterator it = entity.getGroupIds().iterator();
-            while (it.hasNext()) {
-                String groupId = (String) it.next();
+            for (String groupId : entity.getGroupIds()) {
                 ContentValues cv = new ContentValues();
                 cv.put("key", this.mKey);
                 cv.put("group_id", groupId);
@@ -312,9 +310,9 @@ public class DbHelper extends SQLiteOpenHelper {
                 int count;
                 String component = pair.getKey();
                 ContentValues cv = pair.getValue();
-                long timeStamp = cv.getAsLong("last_opened").longValue();
+                long timeStamp = cv.getAsLong("last_opened");
                 synchronized (DbHelper.this.mLock) {
-                    if (DbHelper.this.mMostRecentTimeStamp.longValue() < timeStamp) {
+                    if (DbHelper.this.mMostRecentTimeStamp < timeStamp) {
                         DbHelper.this.mMostRecentTimeStamp = Long.valueOf(timeStamp);
                     }
                 }
@@ -397,6 +395,7 @@ public class DbHelper extends SQLiteOpenHelper {
                     try {
                         stream = contentResolver.openInputStream(DbMigrationContract.CONTENT_URI);
                     } catch (FileNotFoundException e) {
+                        e.printStackTrace();
                     }
                     if (stream != null) {
                         loadFromSavedStateInTransaction(db, stream);
@@ -409,6 +408,7 @@ public class DbHelper extends SQLiteOpenHelper {
                         try {
                             stream.close();
                         } catch (IOException e3) {
+                            e3.printStackTrace();
                         }
                     }
                 }
@@ -419,9 +419,11 @@ public class DbHelper extends SQLiteOpenHelper {
                     try {
                         stream.close();
                     } catch (IOException e4) {
+                        e4.printStackTrace();
                     }
                 }
             } catch (NameNotFoundException e5) {
+                e5.printStackTrace();
             }
         }
         return z;

@@ -152,9 +152,9 @@ class NowPlayCardListener implements OnActiveSessionsChangedListener {
             data.artist = getMetadataString(metadata, "android.media.metadata.ARTIST", fallbackArtist);
             data.albumArtist = getMetadataString(metadata, "android.media.metadata.ALBUM_ARTIST", this.mContext.getString(R.string.unknown_album_artist));
             data.albumTitle = getMetadataString(metadata, "android.media.metadata.ALBUM", this.mContext.getString(R.string.unknown_album));
-            data.year = getMetadataLong(metadata, "android.media.metadata.YEAR", Long.valueOf(-1)).longValue();
-            data.trackNumber = getMetadataLong(metadata, "android.media.metadata.TRACK_NUMBER", Long.valueOf(-1)).longValue();
-            data.duration = getMetadataLong(metadata, "android.media.metadata.DURATION", Long.valueOf(-1)).longValue();
+            data.year = getMetadataLong(metadata, "android.media.metadata.YEAR", Long.valueOf(-1));
+            data.trackNumber = getMetadataLong(metadata, "android.media.metadata.TRACK_NUMBER", Long.valueOf(-1));
+            data.duration = getMetadataLong(metadata, "android.media.metadata.DURATION", Long.valueOf(-1));
             data.artwork = getResizedRecommendationBitmap(getArt(metadata), false, false);
             data.badgeIcon = getBadgeIcon(metadata);
             data.launchColor = getColor(data.playerPackage);
@@ -202,7 +202,7 @@ class NowPlayCardListener implements OnActiveSessionsChangedListener {
     public Long getMetadataLong(MediaMetadata mediaMetadata, String key, Long defaultVal) {
         if (mediaMetadata != null) {
             Long value = Long.valueOf(mediaMetadata.getLong(key));
-            if (value.longValue() != 0) {
+            if (value != 0) {
                 return value;
             }
         }

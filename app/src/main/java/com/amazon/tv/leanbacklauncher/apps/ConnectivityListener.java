@@ -63,12 +63,8 @@ public class ConnectivityListener {
         LinkageError e;
         try {
             return signalStrength.getLevel();
-        } catch (NoClassDefFoundError e2) {
+        } catch (NoClassDefFoundError | IncompatibleClassChangeError e2) {
             e = e2;
-            Log.e("ConnectivityListener", "Exception fetching signal level", e);
-            return 0;
-        } catch (IncompatibleClassChangeError e3) {
-            e = e3;
             Log.e("ConnectivityListener", "Exception fetching signal level", e);
             return 0;
         }

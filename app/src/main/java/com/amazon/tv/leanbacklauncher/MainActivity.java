@@ -298,6 +298,7 @@ public class MainActivity extends Activity implements OnEditModeChangedListener,
                     try {
                         startActivityForResult(intent, 0);
                     } catch (Exception e) {
+                        e.printStackTrace();
                     }
                 }
                 if (ContextCompat.checkSelfPermission(this,
@@ -672,7 +673,7 @@ public class MainActivity extends Activity implements OnEditModeChangedListener,
             //if (Boolean.TRUE.equals(result))
             //	return true;
             Boolean result = (Boolean) isBackgroundVisibleBehind.invoke(MainActivity.this);
-            return result.booleanValue();
+            return result;
         } catch (Throwable ignored) {
         }
         return false;

@@ -387,7 +387,7 @@ public class Partner {
             this.mRowPositions.put("settings_row", Integer.valueOf(-1));
             int position = 0;
             for (String row : rowsArray) {
-                if (this.mRowPositions.get(row).intValue() == -1) {
+                if (this.mRowPositions.get(row) == -1) {
                     this.mRowPositions.put(row, Integer.valueOf(position));
                     position++;
                 }

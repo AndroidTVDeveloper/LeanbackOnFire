@@ -22,7 +22,7 @@ public class FadeAnimator extends ValueAnimator implements Resettable {
         }
 
         public void onAnimationUpdate(ValueAnimator animation) {
-            FadeAnimator.this.mTarget.setAlpha(((Float) FadeAnimator.this.getAnimatedValue()).floatValue());
+            FadeAnimator.this.mTarget.setAlpha((Float) FadeAnimator.this.getAnimatedValue());
         }
 
         public void onAnimationCancel(Animator animation) {

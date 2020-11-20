@@ -224,9 +224,7 @@ public class AppsRanker implements Listener {
             Collections.sort(launchPoints, getLaunchPointComparator());
             this.mLastLaunchPointRankingLogDump.clear();
             this.mLastLaunchPointRankingLogDump.add("Last Launchpoint Ranking Ordering: " + new Date().toString());
-            Iterator it = launchPoints.iterator();
-            while (it.hasNext()) {
-                LaunchPoint lp = (LaunchPoint) it.next();
+            for (LaunchPoint lp : launchPoints) {
                 AppsEntity entity = this.mEntities.get(lp.getPackageName());
                 if (entity != null) {
                     this.mLastLaunchPointRankingLogDump.add(lp.getTitle() + " | R " + entity.getOrder(lp.getComponentName()) + " | LO " + getLastOpened(lp) + " | INST " + lp.getFirstInstallTime());
@@ -374,9 +372,8 @@ public class AppsRanker implements Listener {
 
     public void dump(String prefix, PrintWriter writer) {
         writer.println(prefix + "==========================");
-        Iterator it = this.mLastLaunchPointRankingLogDump.iterator();
-        while (it.hasNext()) {
-            writer.println(prefix + " " + it.next());
+        for (String s : this.mLastLaunchPointRankingLogDump) {
+            writer.println(prefix + " " + s);
         }
         writer.println(prefix + "==========================");
     }

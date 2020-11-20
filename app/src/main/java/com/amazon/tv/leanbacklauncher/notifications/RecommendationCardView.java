@@ -82,8 +82,8 @@ public class RecommendationCardView extends RecommendationView {
             // todo
             bindBadge(this.mResourceCache.getDrawable(this.mRecommendation.getPackageName(), this.mRecommendation.getBadgeIcon()));
             return;
-        } catch (NameNotFoundException e) {
-        } catch (NotFoundException e2) {
+        } catch (NameNotFoundException | NotFoundException e) {
+            e.printStackTrace();
         }
         bindBadge(null);
     }

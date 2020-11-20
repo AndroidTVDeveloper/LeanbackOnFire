@@ -306,9 +306,8 @@ public class BannerView extends FrameLayout implements OnLongClickListener, Dimm
                 super.setSelected(selected);
                 setFocusedFrameState();
                 if (!(this.mSelectedListeners.isEmpty() || this.mLeavingEditMode)) {
-                    Iterator it = this.mSelectedListeners.iterator();
-                    while (it.hasNext()) {
-                        ((BannerSelectedChangedListener) it.next()).onSelectedChanged(this, selected);
+                    for (BannerSelectedChangedListener mSelectedListener : this.mSelectedListeners) {
+                        mSelectedListener.onSelectedChanged(this, selected);
                     }
                 }
                 if (selected) {

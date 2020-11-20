@@ -36,7 +36,7 @@ public class PlayingIndicatorView extends View {
         this.mAnimator.setFloatValues(0.0f, (float) (this.mAnimator.getDuration() / 80));
         this.mAnimator.addUpdateListener(new AnimatorUpdateListener() {
             public void onAnimationUpdate(ValueAnimator animation) {
-                PlayingIndicatorView.this.mProgress = ((Float) animation.getAnimatedValue()).floatValue();
+                PlayingIndicatorView.this.mProgress = (Float) animation.getAnimatedValue();
                 PlayingIndicatorView.this.invalidate();
             }
         });

@@ -120,10 +120,8 @@ public class WallpaperInstaller {
             wallpaperManager.suggestDesiredDimensions(bitmap.getWidth(), bitmap.getHeight());
             wallpaperManager.setBitmap(bitmap);
             return;
-        } catch (IOException e2) {
+        } catch (IOException | OutOfMemoryError e2) {
             e = e2;
-        } catch (OutOfMemoryError e3) {
-            e = e3;
         }
         Log.e("WallpaperInstaller", "Cannot install wallpaper", e);
         this.mInstallingWallpaper = false;

@@ -135,9 +135,8 @@ public class EditableAppsRowView extends ActiveItemsRowView implements OnGlobalF
                 getViewTreeObserver().addOnGlobalFocusChangeListener(this);
             }
             if (!this.mEditListeners.isEmpty()) {
-                Iterator it = this.mEditListeners.iterator();
-                while (it.hasNext()) {
-                    ((OnEditModeChangedListener) it.next()).onEditModeChanged(editMode);
+                for (OnEditModeChangedListener mEditListener : this.mEditListeners) {
+                    mEditListener.onEditModeChanged(editMode);
                 }
             }
             if (Log.isLoggable("EditableAppsRowView", 2)) {

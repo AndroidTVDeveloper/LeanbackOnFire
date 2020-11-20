@@ -504,9 +504,7 @@ class RecommendationsManager implements Ranker.RankingListener {
         HashMap<StatusBarNotification, Double> scoreMap = new HashMap();
         ArrayList<StatusBarNotification> notifications = new ArrayList();
         for (ArrayList<StatusBarNotification> recSet : this.mPackageToRecSet.values()) {
-            Iterator it = recSet.iterator();
-            while (it.hasNext()) {
-                StatusBarNotification sbn = (StatusBarNotification) it.next();
+            for (StatusBarNotification sbn : recSet) {
                 notifications.add(sbn);
                 double rawScore = this.mRanker.getBaseNotificationScore(sbn);
                 double score = this.mRanker.getCachedNotificationScore(sbn);

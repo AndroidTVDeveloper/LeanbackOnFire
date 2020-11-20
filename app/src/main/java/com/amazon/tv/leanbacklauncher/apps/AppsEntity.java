@@ -41,20 +41,20 @@ public class AppsEntity {
                 lastOpened = Long.valueOf(0);
             }
         }
-        return lastOpened.longValue();
+        return lastOpened;
     }
 
     public long getOrder(String component) {
         Long order = this.mOrder.get(component);
-        if ((order == null || order.longValue() == 0) && this.mOrder.keySet().size() == 1) {
+        if ((order == null || order == 0) && this.mOrder.keySet().size() == 1) {
             order = this.mOrder.values().iterator().next();
             if (order == null) {
                 order = Long.valueOf(0);
             }
-            setOrder(component, order.longValue());
+            setOrder(component, order);
         }
         if (order != null) {
-            return order.longValue();
+            return order;
         }
         return 0;
     }

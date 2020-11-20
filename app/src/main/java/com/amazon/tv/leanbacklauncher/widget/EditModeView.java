@@ -215,38 +215,33 @@ public final class EditModeView extends RelativeLayout implements OnClickListene
     }
 
     private void notifyOnExitEditModeTriggered() {
-        Iterator it = this.mActionListeners.iterator();
-        while (it.hasNext()) {
-            ((EditModeViewActionListener) it.next()).onEditModeExitTriggered();
+        for (EditModeViewActionListener mActionListener : this.mActionListeners) {
+            mActionListener.onEditModeExitTriggered();
         }
     }
 
     private void notifyOnFocusLeavingEditMode(int from) {
-        Iterator it = this.mActionListeners.iterator();
-        while (it.hasNext()) {
-            ((EditModeViewActionListener) it.next()).onFocusLeavingEditModeLayer(from);
+        for (EditModeViewActionListener mActionListener : this.mActionListeners) {
+            mActionListener.onFocusLeavingEditModeLayer(from);
         }
     }
 
     private void notifyUninstallComplete() {
-        Iterator it = this.mActionListeners.iterator();
-        while (it.hasNext()) {
-            ((EditModeViewActionListener) it.next()).onUninstallComplete();
+        for (EditModeViewActionListener mActionListener : this.mActionListeners) {
+            mActionListener.onUninstallComplete();
         }
     }
 
     private void notifyUninstallFailure() {
-        Iterator it = this.mActionListeners.iterator();
-        while (it.hasNext()) {
-            ((EditModeViewActionListener) it.next()).onUninstallFailure();
+        for (EditModeViewActionListener mActionListener : this.mActionListeners) {
+            mActionListener.onUninstallFailure();
         }
     }
 
     private String notifyPrepForUninstall() {
         String packageUninstalling = "";
-        Iterator it = this.mActionListeners.iterator();
-        while (it.hasNext()) {
-            String result = ((EditModeViewActionListener) it.next()).onPrepForUninstall();
+        for (EditModeViewActionListener mActionListener : this.mActionListeners) {
+            String result = mActionListener.onPrepForUninstall();
             if (!(result == null || result.isEmpty())) {
                 packageUninstalling = result;
             }

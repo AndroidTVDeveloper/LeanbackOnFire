@@ -305,10 +305,8 @@ public abstract class NotificationsServiceAdapter<VH extends ViewHolder> extends
     private static double getSortKey(TvRecommendation rec) {
         double value = -1.0d;
         try {
-            return Double.valueOf(rec.getSortKey()).doubleValue();
-        } catch (NullPointerException e) {
-            return value;
-        } catch (NumberFormatException e2) {
+            return Double.valueOf(rec.getSortKey());
+        } catch (NullPointerException | NumberFormatException e) {
             return value;
         }
     }
