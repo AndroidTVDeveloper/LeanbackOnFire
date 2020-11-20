@@ -45,8 +45,10 @@ public enum RowType {
         return valueOf(name.toUpperCase().trim());
     }
 
+    public static final RowType[] VALUES = values();
+
     static {
-        for (RowType type : values()) {
+        for (RowType type : VALUES) {
             intToType.put(type.code, type);
         }
     }

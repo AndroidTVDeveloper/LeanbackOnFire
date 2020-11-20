@@ -13,6 +13,7 @@ public class SettingsUtil {
         APP_CONFIGURE(5),
         EDIT_FAVORITES(10);
 
+        public static final SettingsType[] VALUES = values();
         private final int code;
 
         SettingsType(int code) {
@@ -20,7 +21,7 @@ public class SettingsUtil {
         }
 
         public static SettingsType fromCode(int code) {
-            for (SettingsType type : values())
+            for (SettingsType type : VALUES)
                 if (type.code == code)
                     return type;
             return UNKNOWN;
