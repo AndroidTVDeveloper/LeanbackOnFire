@@ -32,6 +32,7 @@ class AppUsageStatistics {
         try {
             mPrivilegedAppDir = new File(Environment.getRootDirectory(), "priv-app").getCanonicalPath();
         } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -61,6 +62,7 @@ class AppUsageStatistics {
                     privApps.add(pi.packageName);
                 }
             } catch (NameNotFoundException e) {
+                e.printStackTrace();
             }
         }
         return privApps;

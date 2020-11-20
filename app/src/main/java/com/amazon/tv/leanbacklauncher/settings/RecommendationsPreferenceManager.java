@@ -166,6 +166,7 @@ public class RecommendationsPreferenceManager {
                     info.blacklisted = blacklistedPackages.contains(packageName);
                     this.mPackages.add(info);
                 } catch (NameNotFoundException e) {
+                    e.printStackTrace();
                 }
             }
         }

@@ -397,6 +397,7 @@ public class DbHelper extends SQLiteOpenHelper {
                     try {
                         stream = contentResolver.openInputStream(DbMigrationContract.CONTENT_URI);
                     } catch (FileNotFoundException e) {
+                        e.printStackTrace();
                     }
                     if (stream != null) {
                         loadFromSavedStateInTransaction(db, stream);
@@ -409,6 +410,7 @@ public class DbHelper extends SQLiteOpenHelper {
                         try {
                             stream.close();
                         } catch (IOException e3) {
+                            e3.printStackTrace();
                         }
                     }
                 }
@@ -419,9 +421,11 @@ public class DbHelper extends SQLiteOpenHelper {
                     try {
                         stream.close();
                     } catch (IOException e4) {
+                        e4.printStackTrace();
                     }
                 }
             } catch (NameNotFoundException e5) {
+                e5.printStackTrace();
             }
         }
         return z;

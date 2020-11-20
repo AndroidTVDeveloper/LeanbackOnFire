@@ -120,6 +120,7 @@ public class Util {
                     return info.firstInstallTime;
                 }
             } catch (NameNotFoundException e) {
+                e.printStackTrace();
             }
         }
         Log.v("LeanbackLauncher", "Couldn't find install time for " + pkgName + " assuming it's right now");

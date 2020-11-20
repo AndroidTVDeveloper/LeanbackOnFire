@@ -298,6 +298,7 @@ public class MainActivity extends Activity implements OnEditModeChangedListener,
                     try {
                         startActivityForResult(intent, 0);
                     } catch (Exception e) {
+                        e.printStackTrace();
                     }
                 }
                 if (ContextCompat.checkSelfPermission(this,
