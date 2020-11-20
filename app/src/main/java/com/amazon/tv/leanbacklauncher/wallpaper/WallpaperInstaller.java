@@ -25,10 +25,10 @@ import java.io.IOException;
 
 public class WallpaperInstaller {
     private static WallpaperInstaller sInstance;
-    private Context mContext;
+    private final Context mContext;
     private boolean mInstallationPending;
     private boolean mInstallingWallpaper;
-    private boolean mWallpaperInstalled;
+    private final boolean mWallpaperInstalled;
 
     public static final class WallpaperChangedReceiver extends BroadcastReceiver {
         public void onReceive(Context context, Intent intent) {

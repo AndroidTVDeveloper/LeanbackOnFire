@@ -106,16 +106,16 @@ public class MainActivity extends Activity implements OnEditModeChangedListener,
     private AppWidgetManager mAppWidgetManager;
     private ContentResolver mContentResolver;
     private boolean mDelayFirstRecommendationsVisible = true;
-    private AnimatorLifecycle mEditModeAnimation = new AnimatorLifecycle();
+    private final AnimatorLifecycle mEditModeAnimation = new AnimatorLifecycle();
     private EditModeView mEditModeView;
     private LeanbackLauncherEventLogger mEventLogger;
     private boolean mFadeDismissAndSummonAnimations;
-    private Handler mHandler = new MainActivityMessageHandler(this);
+    private final Handler mHandler = new MainActivityMessageHandler(this);
 
-    private static String TAG = "LeanbackLauncher";
+    private static final String TAG = "LeanbackLauncher";
 
     private static class MainActivityMessageHandler extends Handler {
-        private MainActivity activity;
+        private final MainActivity activity;
 
         private MainActivityMessageHandler(MainActivity activity) {
             this.activity = activity;
@@ -161,11 +161,11 @@ public class MainActivity extends Activity implements OnEditModeChangedListener,
 
     private HomeScreenAdapter mHomeAdapter;
     private HomeScreenView mHomeScreenView;
-    private ArrayList<IdleListener> mIdleListeners = new ArrayList<>();
+    private final ArrayList<IdleListener> mIdleListeners = new ArrayList<>();
     private int mIdlePeriod;
     private boolean mIsIdle;
     private boolean mKeepUiReset;
-    private AnimatorLifecycle mLaunchAnimation = new AnimatorLifecycle();
+    private final AnimatorLifecycle mLaunchAnimation = new AnimatorLifecycle();
     private VerticalGridView mList;
     private final Runnable mMoveTaskToBack = new Runnable() {
         public void run() {
@@ -174,9 +174,9 @@ public class MainActivity extends Activity implements OnEditModeChangedListener,
             }
         }
     };
-    private NotificationRowListener mNotifListener = new NotificationRowListener() {
+    private final NotificationRowListener mNotifListener = new NotificationRowListener() {
         private Handler mHandler;
-        private Runnable mSelectFirstRecommendationRunnable = new Runnable() {
+        private final Runnable mSelectFirstRecommendationRunnable = new Runnable() {
             public void run() {
                 if (MainActivity.this.mNotificationsView.getAdapter() != null && MainActivity.this.mNotificationsView.getAdapter().getItemCount() > 0) {
                     MainActivity.this.mNotificationsView.setSelectedPositionSmooth(0);
@@ -219,7 +219,7 @@ public class MainActivity extends Activity implements OnEditModeChangedListener,
             }
         }
     };
-    private AnimatorLifecycle mPauseAnimation = new AnimatorLifecycle();
+    private final AnimatorLifecycle mPauseAnimation = new AnimatorLifecycle();
     private NotificationsAdapter mRecommendationsAdapter;
     private final Runnable mRefreshHomeAdapter = new Runnable() {
         public void run() {
@@ -231,7 +231,7 @@ public class MainActivity extends Activity implements OnEditModeChangedListener,
     private boolean mResetAfterIdleEnabled;
     private int mResetPeriod;
     private HomeScrollManager mScrollManager;
-    private LoaderCallbacks<Drawable> mSearchIconCallbacks = new LoaderCallbacks<Drawable>() {
+    private final LoaderCallbacks<Drawable> mSearchIconCallbacks = new LoaderCallbacks<Drawable>() {
         public Loader<Drawable> onCreateLoader(int id, Bundle args) {
             return new TvSearchIconLoader(MainActivity.this.getApplicationContext());
         }
@@ -244,7 +244,7 @@ public class MainActivity extends Activity implements OnEditModeChangedListener,
             MainActivity.this.mHomeAdapter.onSearchIconUpdate(null);
         }
     };
-    private LoaderCallbacks<String[]> mSearchSuggestionsCallbacks = new LoaderCallbacks<String[]>() {
+    private final LoaderCallbacks<String[]> mSearchSuggestionsCallbacks = new LoaderCallbacks<String[]>() {
         public Loader<String[]> onCreateLoader(int id, Bundle args) {
             return new TvSearchSuggestionsLoader(MainActivity.this.getApplicationContext());
         }
@@ -484,11 +484,7 @@ public class MainActivity extends Activity implements OnEditModeChangedListener,
         if (this.mAppEditMode == editMode) {
             return;
         }
-        if (this.mAccessibilityManager.isEnabled()) {
-            setEditMode(editMode, false);
-        } else {
-            setEditMode(editMode, true);
-        }
+        setEditMode(editMode, !this.mAccessibilityManager.isEnabled());
     }
 
     public void onUninstallPressed(String packageName) {
@@ -650,7 +646,7 @@ public class MainActivity extends Activity implements OnEditModeChangedListener,
                 this.mNotificationsView.setIgnoreNextActivateBackgroundChange();
             }
         } else { // focus on 1st Apps cat || Search (0)
-            int ar[] = {0}; // 0, 4, 8, 9, 7 - SEARCH, GAMES, MUSIC, VIDEO, FAVORITES as in buildRowList()
+            int[] ar = {0}; // 0, 4, 8, 9, 7 - SEARCH, GAMES, MUSIC, VIDEO, FAVORITES as in buildRowList()
             int i, x;
             for (i = 0; i < ar.length; i++) {
                 x = ar[i];
@@ -987,7 +983,7 @@ public class MainActivity extends Activity implements OnEditModeChangedListener,
     }
 
     private void addWidget(boolean refresh) {
-        ViewGroup wrapper = (LinearLayout) findViewById(R.id.widget_wrapper);
+        ViewGroup wrapper = findViewById(R.id.widget_wrapper);
         if (wrapper != null) {
             if (refresh || this.mAppWidgetHostView == null) {
                 wrapper.removeAllViews();
@@ -1026,7 +1022,7 @@ public class MainActivity extends Activity implements OnEditModeChangedListener,
                     clearWidget(appWidgetId);
                     wrapper.addView(LayoutInflater.from(this).inflate(R.layout.clock, wrapper, false));
                     Typeface typeface = ResourcesCompat.getFont(this, R.font.sfuidisplay_thin);
-                    TextView clockview = (ClockView) findViewById(R.id.clock);
+                    TextView clockview = findViewById(R.id.clock);
                     if (clockview != null && typeface != null)
                         clockview.setTypeface(typeface);
                     return;

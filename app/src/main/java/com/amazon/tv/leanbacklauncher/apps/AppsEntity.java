@@ -7,10 +7,10 @@ import java.util.HashMap;
 import java.util.Set;
 
 public class AppsEntity {
-    private AppsDbHelper mDbHelper;
-    private HashMap<String, Long> mLastOpened;
-    private HashMap<String, Long> mOrder;
-    private String mPackageName;
+    private final AppsDbHelper mDbHelper;
+    private final HashMap<String, Long> mLastOpened;
+    private final HashMap<String, Long> mOrder;
+    private final String mPackageName;
 
     public AppsEntity(Context context, AppsDbHelper helper, String packageName, long lastOpenTime, long initialOrder) {
         this(context, helper, packageName);

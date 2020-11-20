@@ -18,13 +18,13 @@ import java.util.Iterator;
 import java.util.List;
 
 class AppUsageStatistics {
-    private static boolean DEBUG = false;
-    private static String TAG = "AppUsageStatistics";
+    private static final boolean DEBUG = false;
+    private static final String TAG = "AppUsageStatistics";
     private static String mPrivilegedAppDir;
     private ArrayMap<String, Double> mAppUsageScore = null;
-    private Context mContext;
+    private final Context mContext;
     private long mLastGetAppUsageAdjustmentCall = 0;
-    private UsageStatsManager mUsageStatsManager;
+    private final UsageStatsManager mUsageStatsManager;
 
     AppUsageStatistics(Context context) {
         this.mContext = context;

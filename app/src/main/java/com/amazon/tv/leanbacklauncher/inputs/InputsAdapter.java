@@ -51,7 +51,7 @@ public class InputsAdapter extends RowViewAdapter<InputsAdapter.InputViewHolder>
 
 
     private static class InputsMessageHandler extends Handler {
-        private InputsAdapter ref;
+        private final InputsAdapter ref;
 
         private InputsMessageHandler(InputsAdapter ref) {
             this.ref = ref;

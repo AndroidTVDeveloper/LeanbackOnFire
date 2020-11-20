@@ -6,7 +6,7 @@ import android.util.Log;
 import java.util.concurrent.TimeUnit;
 
 public final class LeanbackLauncherEventLogger {
-    private static boolean DEBUG = false;
+    private static final boolean DEBUG = false;
     private static final long MAX_FLUSH_WAIT_TIME_USEC = TimeUnit.MILLISECONDS.toMicros(100);
     private static final String TAG = LeanbackLauncherEventLogger.class.getSimpleName();
     private static LeanbackLauncherEventLogger sInstance = null;

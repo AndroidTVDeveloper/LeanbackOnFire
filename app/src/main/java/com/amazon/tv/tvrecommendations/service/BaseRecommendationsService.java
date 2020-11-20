@@ -24,7 +24,7 @@ public abstract class BaseRecommendationsService extends Service {
     private RecommendationsManager mManager;
     private final Class mNotificationsServiceClass;
     private final RankerParametersFactory mRankerParametersFactory;
-    private Stub mServiceStub = new Stub() {
+    private final Stub mServiceStub = new Stub() {
         public int getApiVersion() {
             return 1;
         }

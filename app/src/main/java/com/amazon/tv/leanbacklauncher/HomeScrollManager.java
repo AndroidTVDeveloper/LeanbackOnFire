@@ -15,10 +15,10 @@ public class HomeScrollManager {
     private boolean mAnimationsEnabled = true;
     private float mFractionFromTop;
     private final RecyclerView mRecyclerView;
-    private int mScrollAnimationThreshold;
-    private ArrayList<HomeScrollFractionListener> mScrollListeners = new ArrayList();
+    private final int mScrollAnimationThreshold;
+    private final ArrayList<HomeScrollFractionListener> mScrollListeners = new ArrayList();
     private int mScrollPosition;
-    private int mScrollThreshold;
+    private final int mScrollThreshold;
 
     public interface HomeScrollFractionListener {
         void onScrollPositionChanged(int i, float f);

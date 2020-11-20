@@ -11,7 +11,7 @@ import android.view.View;
 
 public class FadeMaskView extends View {
     private Bitmap mMask;
-    private Paint mPaint;
+    private final Paint mPaint;
 
     public FadeMaskView(Context context) {
         this(context, null);

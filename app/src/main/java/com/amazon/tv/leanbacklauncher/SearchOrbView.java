@@ -38,16 +38,16 @@ public class SearchOrbView extends FrameLayout implements IdleListener, SearchPa
     private int mClickDeviceId = -1;
     private int mColorBright;
     private int mColorDim;
-    private Context mContext;
+    private final Context mContext;
     private int mCurrentIndex = 0;
-    private Drawable mDefaultColorMicIcon;
-    private String[] mDefaultTextToShow;
+    private final Drawable mDefaultColorMicIcon;
+    private final String[] mDefaultTextToShow;
     private boolean mEatDpadCenterKeyDown;
     private final int mFocusedColor;
     private final String mFocusedKeyboardText;
     private final String mFocusedMicText;
     private final String mFocusedText;
-    private Handler mHandler = new Handler();
+    private final Handler mHandler = new Handler();
     private final int mIdleTextFlipDelay;
     private final boolean mIsHintFlippingAllowed;
     private FrameLayout mKeyboardContainer;
@@ -59,7 +59,7 @@ public class SearchOrbView extends FrameLayout implements IdleListener, SearchPa
     private final int mLaunchFadeDuration;
     private SearchLaunchListener mListener;
     private androidx.leanback.widget.SearchOrbView mMicOrbView;
-    private Drawable mMicUnfocusedIcon;
+    private final Drawable mMicUnfocusedIcon;
     private ObjectAnimator mOrbAnimation;
     private final String mSearchHintText;
     private final Intent mSearchIntent = Util.getSearchIntent();
@@ -263,7 +263,7 @@ public class SearchOrbView extends FrameLayout implements IdleListener, SearchPa
         this.mSwitcher = findViewById(R.id.text_switcher);
         this.mSwitcher.setAnimateFirstView(false);
         this.mSwitcher.setFactory(new ViewFactory() {
-            LayoutInflater inflater = ((LayoutInflater) context.getSystemService("layout_inflater"));
+            final LayoutInflater inflater = ((LayoutInflater) context.getSystemService("layout_inflater"));
 
             public View makeView() {
                 return this.inflater.inflate(R.layout.search_orb_text_hint, SearchOrbView.this, false);

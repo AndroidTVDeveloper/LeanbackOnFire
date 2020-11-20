@@ -11,12 +11,12 @@ import androidx.appcompat.widget.AppCompatTextView;
 import com.amazon.tv.leanbacklauncher.R;
 
 public final class InputsTextView extends AppCompatTextView {
-    private TypedValue mPaddingDefault = new TypedValue();
-    private TypedValue mPaddingWrapped = new TypedValue();
+    private final TypedValue mPaddingDefault = new TypedValue();
+    private final TypedValue mPaddingWrapped = new TypedValue();
     private Resources mRes;
     private boolean mTextChanged;
-    private TypedValue mTextSizeDefault = new TypedValue();
-    private TypedValue mTextSizeWrapped = new TypedValue();
+    private final TypedValue mTextSizeDefault = new TypedValue();
+    private final TypedValue mTextSizeWrapped = new TypedValue();
 
     public InputsTextView(Context context) {
         super(context);

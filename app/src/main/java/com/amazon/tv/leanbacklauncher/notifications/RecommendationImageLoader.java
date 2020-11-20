@@ -13,7 +13,7 @@ public class RecommendationImageLoader {
     private static RecommendationImageLoader sInstance;
     private IRecommendationsService mBoundService;
     private final SwitchingRecommendationsClient mClient;
-    private ConditionVariable mServiceBound = new ConditionVariable();
+    private final ConditionVariable mServiceBound = new ConditionVariable();
 
     public static RecommendationImageLoader getInstance(Context context) {
         if (sInstance == null) {

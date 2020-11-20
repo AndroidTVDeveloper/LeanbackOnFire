@@ -20,14 +20,14 @@ import java.util.List;
 
 public class AppsManager implements InstallingLaunchPointListener, Listener, BlacklistListener {
     private static AppsManager sAppsManager;
-    private AppsRanker mAppsRanker;
+    private final AppsRanker mAppsRanker;
     private final Context mContext;
     private final BroadcastReceiver mExternalAppsUpdateReceiver;
-    private LaunchPointListGenerator mLaunchPointListGenerator;
+    private final LaunchPointListGenerator mLaunchPointListGenerator;
     private final MarketUpdateReceiver mMarketUpdateReceiver;
     private final PackageChangedReceiver mPackageChangedReceiver;
     private int mReceiversRegisteredRefCount;
-    private ArrayList<HomeScreenRow> mRows = new ArrayList();
+    private final ArrayList<HomeScreenRow> mRows = new ArrayList();
     private SearchPackageChangeListener mSearchChangeListener;
     private String mSearchPackageName;
 

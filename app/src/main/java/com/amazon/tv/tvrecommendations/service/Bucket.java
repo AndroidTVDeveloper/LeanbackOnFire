@@ -1,7 +1,7 @@
 package com.amazon.tv.tvrecommendations.service;
 
 class Bucket {
-    private ActiveDayBuffer mBuffer = new ActiveDayBuffer(14);
+    private final ActiveDayBuffer mBuffer = new ActiveDayBuffer(14);
     private long mTimeStamp;
 
     public Bucket(long timestamp) {

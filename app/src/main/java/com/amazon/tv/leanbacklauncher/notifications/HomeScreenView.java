@@ -16,7 +16,7 @@ import com.amazon.tv.leanbacklauncher.util.Util;
 public class HomeScreenView extends ViewFlipper {
     private TextView mErrorMessageText;
     private boolean mHasNowPlayingCard;
-    private HomeScreenMessaging mHomeScreenMessaging = new HomeScreenMessaging(this);
+    private final HomeScreenMessaging mHomeScreenMessaging = new HomeScreenMessaging(this);
     private int mNotifRowViewIndex;
     // private final NowPlayCardListener mNowPlayCardListener;
     // private NowPlayingCardView mNowPlayingCardView;

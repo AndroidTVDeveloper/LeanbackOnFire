@@ -1,7 +1,7 @@
 package com.amazon.tv.leanbacklauncher.widget;
 
 public class EditModeManager {
-    private static EditModeManager sEditModeManager = new EditModeManager();
+    private static final EditModeManager sEditModeManager = new EditModeManager();
     private String mSelectedComponentName;
 
     public static EditModeManager getInstance() {

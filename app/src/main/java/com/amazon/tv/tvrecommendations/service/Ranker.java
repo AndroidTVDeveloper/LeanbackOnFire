@@ -20,15 +20,15 @@ import java.util.Queue;
 
 public class Ranker implements DbHelper.Listener {
     static RankerParameters sRankerParameters;
-    private AppUsageStatistics mAppUsageStatistics;
+    private final AppUsageStatistics mAppUsageStatistics;
     private List<String> mBlacklistedPackages = new ArrayList();
     private final Queue<CachedAction> mCachedActions = new LinkedList();
-    private Context mContext;
-    private Normalizer mCtrNormalizer = new Normalizer();
-    private DbHelper mDbHelper;
+    private final Context mContext;
+    private final Normalizer mCtrNormalizer = new Normalizer();
+    private final DbHelper mDbHelper;
     private HashMap<String, Entity> mEntities = new HashMap();
     private final Object mEntitiesLock = new Object();
-    private List<RankingListener> mListeners = new ArrayList();
+    private final List<RankingListener> mListeners = new ArrayList();
     private boolean mQueryingScores;
 
     private static class CachedAction {

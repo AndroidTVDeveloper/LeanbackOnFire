@@ -52,13 +52,13 @@ import java.util.Set;
 
 public class HomeScreenAdapter extends Adapter<HomeScreenAdapter.HomeViewHolder> implements RowChangeListener, ConnectivityListener.Listener, OnEditModeChangedListener {
     private int mActiveItemIndex = -1;
-    private ArrayList<HomeScreenRow> mAllRowsList = new ArrayList(7);
+    private final ArrayList<HomeScreenRow> mAllRowsList = new ArrayList(7);
     private final AppsManager mAppsManager;
     private Drawable mAssistantIcon;
     private String[] mAssistantSuggestions;
-    private ConnectivityListener mConnectivityListener;
+    private final ConnectivityListener mConnectivityListener;
     private OnEditModeChangedListener mEditListener;
-    private EditModeView mEditModeView;
+    private final EditModeView mEditModeView;
     private final SparseArray<View> mHeaders = new SparseArray(7);
     private HomeScreenMessaging mHomeScreenMessaging;
     private final LayoutInflater mInflater;
@@ -70,7 +70,7 @@ public class HomeScreenAdapter extends Adapter<HomeScreenAdapter.HomeViewHolder>
     private final HomeScrollManager mScrollManager;
     private SearchOrbView mSearch;
     private final SettingsAdapter mSettingsAdapter;
-    private ArrayList<HomeScreenRow> mVisRowsList = new ArrayList(7);
+    private final ArrayList<HomeScreenRow> mVisRowsList = new ArrayList(7);
     private Adapter<?> mNotificationsAdapter;
 
     static final class HomeViewHolder extends ViewHolder {
@@ -710,7 +710,7 @@ public class HomeScreenAdapter extends Adapter<HomeScreenAdapter.HomeViewHolder>
 
     public void sortRowsIfNeeded(boolean force) {
         for (int i = 0; i < this.mAllRowsList.size(); i++) {
-            Adapter<?> adapter = ((HomeScreenRow) this.mAllRowsList.get(i)).getAdapter();
+            Adapter<?> adapter = this.mAllRowsList.get(i).getAdapter();
             if (adapter instanceof AppsAdapter) {
                 ((AppsAdapter) adapter).sortItemsIfNeeded(force);
             }

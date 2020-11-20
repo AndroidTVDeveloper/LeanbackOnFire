@@ -24,7 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class RecommendationsPreferenceManager {
-    private Context mContext;
+    private final Context mContext;
 
     public interface LoadBlacklistCountCallback {
         void onBlacklistCountLoaded(int i);

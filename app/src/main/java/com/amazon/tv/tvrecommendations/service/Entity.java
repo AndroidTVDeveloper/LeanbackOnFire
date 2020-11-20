@@ -12,12 +12,12 @@ import java.util.Set;
 class Entity {
     private double mBonus;
     private long mBonusTime;
-    private LinkedHashMap<String, Bucket> mBucketList;
-    private DbHelper mDbHelper;
+    private final LinkedHashMap<String, Bucket> mBucketList;
+    private final DbHelper mDbHelper;
     private boolean mHasPostedRecommendations;
-    private String mKey;
-    private HashMap<String, Long> mLastOpened;
-    private HashMap<String, Long> mRankOrder;
+    private final String mKey;
+    private final HashMap<String, Long> mLastOpened;
+    private final HashMap<String, Long> mRankOrder;
     private final SignalsAggregator mSignalsAggregator;
 
     public Entity(Context context, DbHelper helper, String key, long lastOpenTime, long initialOrder, boolean postedRec) {

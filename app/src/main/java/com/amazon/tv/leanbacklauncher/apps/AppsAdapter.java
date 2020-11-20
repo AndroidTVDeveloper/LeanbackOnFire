@@ -49,11 +49,11 @@ public class AppsAdapter extends RowViewAdapter<AppsAdapter.AppViewHolder> imple
     protected final LayoutInflater mInflater;
     private boolean mItemsHaveBeenSorted;
     protected ArrayList<LaunchPoint> mLaunchPoints;
-    private Handler mNotifyHandler = new Handler();
-    private static String TAG = "AppsAdapter";
+    private final Handler mNotifyHandler = new Handler();
+    private static final String TAG = "AppsAdapter";
 
-    private SharedPreferencesUtil prefUtil;
-    private SharedPreferences.OnSharedPreferenceChangeListener listener = this;
+    private final SharedPreferencesUtil prefUtil;
+    private final SharedPreferences.OnSharedPreferenceChangeListener listener = this;
 
     public interface ActionOpenLaunchPointListener {
         void onActionOpenLaunchPoint(String str, String str2);

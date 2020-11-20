@@ -3,8 +3,8 @@ package com.amazon.tv.tvrecommendations.service;
 import java.util.Date;
 
 class SignalsAggregator implements Aggregator<Signals> {
-    private SumAggregator<Integer> mClicks = new SumAggregator();
-    private SumAggregator<Integer> mImpressions = new SumAggregator();
+    private final SumAggregator<Integer> mClicks = new SumAggregator();
+    private final SumAggregator<Integer> mImpressions = new SumAggregator();
 
     SignalsAggregator() {
     }

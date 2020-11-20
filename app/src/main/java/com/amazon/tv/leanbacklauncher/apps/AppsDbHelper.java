@@ -26,10 +26,10 @@ import java.util.List;
 import java.util.concurrent.Executor;
 
 public class AppsDbHelper extends SQLiteOpenHelper {
-    private static String TAG = "AppsDbHelper";
+    private static final String TAG = "AppsDbHelper";
     @SuppressLint({"StaticFieldLeak"})
     private static AppsDbHelper sAppsDbHelper = null;
-    private Context mContext;
+    private final Context mContext;
     private final Object mLock;
     private Long mMostRecentTimeStamp;
 
@@ -38,7 +38,7 @@ public class AppsDbHelper extends SQLiteOpenHelper {
     }
 
     private class LoadEntitiesTask extends AsyncTask<Void, Void, HashMap<String, AppsEntity>> {
-        private Listener mListener;
+        private final Listener mListener;
 
         public LoadEntitiesTask(Listener listener) {
             this.mListener = listener;
@@ -106,7 +106,7 @@ public class AppsDbHelper extends SQLiteOpenHelper {
 
     private class RemoveEntityTask extends AsyncTask<Void, Void, Void> {
         boolean mFullRemoval;
-        private String mKey;
+        private final String mKey;
 
         public RemoveEntityTask(String key, boolean fullRemoval) {
             this.mKey = key;

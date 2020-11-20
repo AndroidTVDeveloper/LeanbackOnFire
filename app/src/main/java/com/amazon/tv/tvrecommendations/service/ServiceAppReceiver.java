@@ -7,7 +7,7 @@ import android.content.IntentFilter;
 import android.net.Uri;
 
 class ServiceAppReceiver extends BroadcastReceiver {
-    private Listener mListener;
+    private final Listener mListener;
 
     public interface Listener {
         void onPackageAdded(String str);

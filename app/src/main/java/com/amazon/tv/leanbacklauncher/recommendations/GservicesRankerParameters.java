@@ -7,7 +7,7 @@ import com.amazon.tv.tvrecommendations.service.RankerParameters;
 import com.amazon.tv.tvrecommendations.service.RankerParametersFactory;
 
 final class GservicesRankerParameters extends RankerParameters {
-    private ContentResolver mContentResolver;
+    private final ContentResolver mContentResolver;
 
     public static class Factory implements RankerParametersFactory {
         public RankerParameters create(Context context) {

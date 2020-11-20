@@ -14,8 +14,8 @@ import java.util.HashMap;
 
 public class PackageResourceCache {
     private static PackageResourceCache sInstance;
-    private HashMap<String, ResourceCacheEntry> mMap = new HashMap();
-    private PackageManager mPackageManager;
+    private final HashMap<String, ResourceCacheEntry> mMap = new HashMap();
+    private final PackageManager mPackageManager;
 
     private static class ResourceCacheEntry {
         SparseArray<Drawable> drawableMap;

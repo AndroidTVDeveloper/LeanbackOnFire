@@ -42,15 +42,15 @@ import com.bumptech.glide.request.transition.Transition;
 
 public abstract class RecommendationView extends ViewGroup implements Target<Bitmap>, DimmableItem, ParticipatesInLaunchAnimation, ParticipatesInScrollAnimation, ViewFocusAnimator.OnFocusLevelChangeListener {
     private static RoundedRectOutlineProvider sOutline;
-    private static Paint sPaint = new Paint();
-    private static RectF sRect = new RectF();
+    private static final Paint sPaint = new Paint();
+    private static final RectF sRect = new RectF();
     private final Drawable mBackground;
-    private int mBackgroundColor;
+    private final int mBackgroundColor;
     private Drawable mBadgeIcon;
-    private RectF mBadgeIconCollapsedBounds = new RectF();
-    private RectF mBadgeIconExpandedBounds = new RectF();
-    private RectF mBadgeIconIntrinsicBounds = new RectF();
-    private Matrix mBadgeIconMatrix = new Matrix();
+    private final RectF mBadgeIconCollapsedBounds = new RectF();
+    private final RectF mBadgeIconExpandedBounds = new RectF();
+    private final RectF mBadgeIconIntrinsicBounds = new RectF();
+    private final Matrix mBadgeIconMatrix = new Matrix();
     private final int mBadgeMarginBottom;
     private final int mBadgeSize;
     private Rect mClipBounds;
@@ -75,7 +75,7 @@ public abstract class RecommendationView extends ViewGroup implements Target<Bit
     private final int mInfoAreaPaddingStart;
     private final int mInfoAreaPaddingTop;
     private final int mInfoAreaTop;
-    private ColorDrawable mInfoBackground;
+    private final ColorDrawable mInfoBackground;
     protected PackageManager mPackageManager;
     private ProgressBar mProgressBar;
     private final int mProgressBarHeight;

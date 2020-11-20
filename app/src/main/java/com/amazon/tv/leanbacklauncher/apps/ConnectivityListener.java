@@ -20,7 +20,7 @@ import java.util.List;
 
 public class ConnectivityListener {
     private final ConnectivityManager mConnectivityManager;
-    private ConnectivityStatus mConnectivityStatus = new ConnectivityStatus();
+    private final ConnectivityStatus mConnectivityStatus = new ConnectivityStatus();
     private final Context mContext;
     private final IntentFilter mFilter;
     private boolean mIsRegistered;
@@ -43,7 +43,7 @@ public class ConnectivityListener {
     }
 
     private static class LeanbackLauncherPhoneStateListener extends PhoneStateListener {
-        private WeakReference<ConnectivityListener> mListener;
+        private final WeakReference<ConnectivityListener> mListener;
 
         public LeanbackLauncherPhoneStateListener(ConnectivityListener listener) {
             this.mListener = new WeakReference(listener);

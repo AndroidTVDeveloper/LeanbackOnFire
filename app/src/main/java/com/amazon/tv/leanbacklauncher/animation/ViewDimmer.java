@@ -29,7 +29,7 @@ public class ViewDimmer {
     private ColorMatrix mConcatMatrix;
     private List<Drawable> mDesatDrawables;
     private List<ImageView> mDesatImageViews;
-    private ObjectAnimator mDimAnimation;
+    private final ObjectAnimator mDimAnimation;
     private float mDimLevel;
     private DimState mDimState;
     private List<Drawable> mDrawables;
@@ -38,7 +38,7 @@ public class ViewDimmer {
     private final float mInactiveDimLevel;
     private List<Integer> mOriginalTextColors;
     private List<PlayingIndicatorView> mPlayingIndicatorViews;
-    private View mTargetView;
+    private final View mTargetView;
     private List<TextView> mTextViews;
 
     public enum DimState {

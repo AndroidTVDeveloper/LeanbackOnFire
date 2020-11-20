@@ -32,7 +32,7 @@ public class WallpaperDownloader {
     private final int mDownloadTimeout;
     private WallpaperHolder mDownloadedImage;
     private boolean mEnabled;
-    private Handler mHandler = new Handler() {
+    private final Handler mHandler = new Handler() {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 1:

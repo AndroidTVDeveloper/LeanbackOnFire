@@ -16,7 +16,7 @@ import com.amazon.tv.leanbacklauncher.capabilities.LauncherConfiguration;
 public class ViewFocusAnimator implements OnFocusChangeListener {
     private final boolean mCardElevationSupported;
     private boolean mEnabled = true;
-    private ObjectAnimator mFocusAnimation;
+    private final ObjectAnimator mFocusAnimation;
     private float mFocusProgress;
     private OnFocusLevelChangeListener mListener;
     private final float mSelectedScaleDelta;

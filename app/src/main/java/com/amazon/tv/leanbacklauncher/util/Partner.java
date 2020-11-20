@@ -29,7 +29,7 @@ public class Partner {
     private final String mReceiverName;
     private final Resources mResources;
     private boolean mRowDataReady;
-    private HashMap<String, Integer> mRowPositions = new HashMap();
+    private final HashMap<String, Integer> mRowPositions = new HashMap();
 
     static {
         sDefaultPrioritiesMap.put("input_type_combined_tuners", Integer.valueOf(-3));

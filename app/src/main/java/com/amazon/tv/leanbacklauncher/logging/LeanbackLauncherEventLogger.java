@@ -60,7 +60,7 @@ public final class LeanbackLauncherEventLogger {
     }
 } */
 public final class LeanbackLauncherEventLogger {
-    private static boolean DEBUG;
+    private static final boolean DEBUG;
     private static final long MAX_FLUSH_WAIT_TIME_USEC;
     private static final String TAG;
     private static LeanbackLauncherEventLogger sInstance;

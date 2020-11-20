@@ -41,10 +41,10 @@ public class LaunchPointListGenerator {
     private boolean mIsReady;
     private final List<Listener> mListeners;
     private final Object mLock;
-    private HashMap<String, Integer> mNonUpdatableBlacklist;
+    private final HashMap<String, Integer> mNonUpdatableBlacklist;
     private ArrayList<LaunchPoint> mSettingsLaunchPoints;
     private boolean mShouldNotify;
-    private HashMap<String, Integer> mUpdatableBlacklist;
+    private final HashMap<String, Integer> mUpdatableBlacklist;
 
     public interface Listener {
         void onLaunchPointListGeneratorReady();

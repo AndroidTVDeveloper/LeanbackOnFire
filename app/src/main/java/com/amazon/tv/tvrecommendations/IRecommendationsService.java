@@ -12,7 +12,7 @@ public interface IRecommendationsService extends IInterface {
     abstract class Stub extends Binder implements IRecommendationsService {
 
         private static class Proxy implements IRecommendationsService {
-            private IBinder mRemote;
+            private final IBinder mRemote;
 
             Proxy(IBinder remote) {
                 this.mRemote = remote;

@@ -38,12 +38,12 @@ public class BannerView extends FrameLayout implements OnLongClickListener, Dimm
     private ImageView mFocusFrame;
     private OnEditModeChangedListener mEditListener;
     private boolean mEditMode;
-    private EditModeManager mEditModeManager;
-    private AppViewFocusAnimator mFocusAnimator;
+    private final EditModeManager mEditModeManager;
+    private final AppViewFocusAnimator mFocusAnimator;
     private View mInstallStateOverlay;
     private BannerView mLastFocusedBanner;
     private boolean mLeavingEditMode;
-    private ArrayList<BannerSelectedChangedListener> mSelectedListeners;
+    private final ArrayList<BannerSelectedChangedListener> mSelectedListeners;
     private AppsAdapter.AppViewHolder mViewHolder;
 
     public BannerView(Context context) {

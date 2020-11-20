@@ -32,13 +32,13 @@ public class AppsRanker implements Listener {
     @SuppressLint({"StaticFieldLeak"})
     private static AppsRanker sAppsRanker = null;
     private final Queue<CachedAction> mCachedActions;
-    private Context mContext;
-    private AppsDbHelper mDbHelper;
+    private final Context mContext;
+    private final AppsDbHelper mDbHelper;
     private HashMap<String, AppsEntity> mEntities;
     private final Object mEntitiesLock;
-    private ArrayList<String> mLastLaunchPointRankingLogDump;
+    private final ArrayList<String> mLastLaunchPointRankingLogDump;
     private Comparator<LaunchPoint> mLaunchPointComparator;
-    private Queue<RankingListener> mListeners;
+    private final Queue<RankingListener> mListeners;
     private boolean mNeedsResorting;
     private SharedPreferencesChangeListener mPrefsListener;
     private boolean mQueryingScores;
@@ -110,7 +110,7 @@ public class AppsRanker implements Listener {
     }
 
     private static class SharedPreferencesChangeListener implements OnSharedPreferenceChangeListener {
-        private WeakReference<AppsRanker> mAppsRankerRef;
+        private final WeakReference<AppsRanker> mAppsRankerRef;
 
         public SharedPreferencesChangeListener(AppsRanker appsRanker) {
             this.mAppsRankerRef = new WeakReference(appsRanker);

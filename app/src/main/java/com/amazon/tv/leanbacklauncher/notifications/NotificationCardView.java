@@ -39,7 +39,7 @@ public class NotificationCardView extends BaseCardView implements DimmableItem, 
     private boolean mAnimationsEnabled;
     private boolean mAutoDismiss;
     private ImageView mBadgeImage;
-    private float mBadgeImageAlpha;
+    private final float mBadgeImageAlpha;
     private ImageView mBadgeImageSelected;
     private PendingIntent mClickedIntent;
     private Rect mClipBounds;
@@ -55,7 +55,7 @@ public class NotificationCardView extends BaseCardView implements DimmableItem, 
     private View mInfoArea;
     private ColorDrawable mInfoBackground;
     private ObjectAnimator mMetaAnim;
-    private int mMetaUnselectedHeight;
+    private final int mMetaUnselectedHeight;
     private View mMetadataArea;
     private ProgressBar mProgBar;
     private String mRecGroup;

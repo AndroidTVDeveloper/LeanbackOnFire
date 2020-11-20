@@ -15,7 +15,7 @@ import com.amazon.tv.leanbacklauncher.animation.ViewDimmer;
 import com.amazon.tv.leanbacklauncher.animation.ViewFocusAnimator;
 
 public class SettingsCardView extends BaseCardView implements DimmableItem, ParticipatesInLaunchAnimation, ParticipatesInScrollAnimation {
-    private int mAnimDuration;
+    private final int mAnimDuration;
     private ImageView mCircle;
     private ViewDimmer mDimmer;
     private ViewFocusAnimator mFocusAnimator;

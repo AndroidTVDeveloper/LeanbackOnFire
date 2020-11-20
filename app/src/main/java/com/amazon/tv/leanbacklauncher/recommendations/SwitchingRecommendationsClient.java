@@ -8,7 +8,7 @@ import androidx.annotation.Keep;
 import com.amazon.tv.tvrecommendations.RecommendationsClient;
 
 public abstract class SwitchingRecommendationsClient extends RecommendationsClient {
-    private Context mContext;
+    private final Context mContext;
     private Delegate mDelegate;
 
     public interface Delegate {

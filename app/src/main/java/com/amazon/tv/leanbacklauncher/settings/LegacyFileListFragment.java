@@ -28,7 +28,7 @@ import java.util.List;
 
 public class LegacyFileListFragment extends GuidedStepSupportFragment {
 
-    private static String TAG = "LegacyFileListFragment";
+    private static final String TAG = "LegacyFileListFragment";
     /* Action ID definition */
     private static final int ACTION_SELECT = 1;
     private static final int ACTION_BACK = 2;

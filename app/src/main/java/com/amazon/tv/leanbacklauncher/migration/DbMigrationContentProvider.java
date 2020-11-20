@@ -17,7 +17,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class DbMigrationContentProvider extends ContentProvider {
-    private static String TAG = "DbMigrationCP";
+    private static final String TAG = "DbMigrationCP";
     private AppsDbHelper mDbHelper;
 
     public DbMigrationContentProvider(AppsDbHelper dbHelper) {

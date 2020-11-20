@@ -24,9 +24,9 @@ import com.amazon.tv.leanbacklauncher.animation.ViewDimmer;
 import com.amazon.tv.leanbacklauncher.notifications.HomeScreenView;
 
 public class ActiveFrame extends LinearLayout implements HomeScrollFractionListener, ParticipatesInScrollAnimation {
-    private AccessibilityManager mAccessibilityManager;
+    private final AccessibilityManager mAccessibilityManager;
     protected float mActiveTextMargin;
-    private int mAnimDuration;
+    private final int mAnimDuration;
     protected int mBottomPadding;
     protected float mCardSpacing;
     protected ViewDimmer.DimState mDimState;
@@ -38,15 +38,15 @@ public class ActiveFrame extends LinearLayout implements HomeScrollFractionListe
     private Animator mHeaderFadeInAnimation;
     private Animator mHeaderFadeOutAnimation;
     protected int mHeaderHeight;
-    private boolean mHeaderVisible;
+    private final boolean mHeaderVisible;
     protected ActiveItemsRowView mRow;
     protected int mRowMinSpacing;
     protected float mRowPadding;
     private boolean mScalesWhenUnfocused;
 
     private class RowExpandAnimation extends Animation {
-        private float mDelta;
-        private float mStartValue;
+        private final float mDelta;
+        private final float mStartValue;
 
         @SuppressLint("ResourceType")
         public RowExpandAnimation(float start, float end) {

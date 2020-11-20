@@ -13,8 +13,8 @@ import com.amazon.tv.leanbacklauncher.apps.LaunchPoint;
 
 public class FavoritesAdapter extends AppsAdapter implements SharedPreferences.OnSharedPreferenceChangeListener {
 
-    private SharedPreferencesUtil prefUtil;
-    private SharedPreferences.OnSharedPreferenceChangeListener listener = this;
+    private final SharedPreferencesUtil prefUtil;
+    private final SharedPreferences.OnSharedPreferenceChangeListener listener = this;
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {

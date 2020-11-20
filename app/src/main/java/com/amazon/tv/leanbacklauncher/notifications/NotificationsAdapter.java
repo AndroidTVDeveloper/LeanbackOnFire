@@ -37,11 +37,11 @@ import java.util.LinkedList;
 
 public class NotificationsAdapter extends NotificationsServiceAdapter<NotificationsAdapter.NotifViewHolder> implements IdleListener, ActionOpenLaunchPointListener {
     private final CardUpdateController mCardUpdateController = new CardUpdateController();
-    private RequestOptions mGlideOptions;
-    private RequestManager mGlideRequestManager;
+    private final RequestOptions mGlideOptions;
+    private final RequestManager mGlideRequestManager;
     // private boolean mHasNowPlayingCard;
     private final int mImpressionDelay;
-    private Handler mImpressionHandler = new ImpressionHandler(this);
+    private final Handler mImpressionHandler = new ImpressionHandler(this);
     private final LayoutInflater mInflater;
     private boolean mIsIdle;
     private final boolean mLegacyRecommendationLayoutSupported;

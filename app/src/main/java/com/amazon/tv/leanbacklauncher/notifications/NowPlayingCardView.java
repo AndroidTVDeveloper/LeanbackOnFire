@@ -38,13 +38,13 @@ public class NowPlayingCardView extends RecommendationView {
     private AnimatorSet mFadeInAnimation;
     private AnimatorSet mFadeOutAnimation;
     private final OnGlobalLayoutListener mGlobalLayoutListener;
-    private Handler mHandler;
-    private Drawable mLinearGradient;
+    private final Handler mHandler;
+    private final Drawable mLinearGradient;
     private NowPlayingCardData mMediaData;
-    private ImageView mPauseImage;
+    private final ImageView mPauseImage;
     private long mPlayerPosMs;
     private int mPlayerState;
-    private PlayingIndicatorView mPlayingIndicator;
+    private final PlayingIndicatorView mPlayingIndicator;
     private boolean mShowProgress;
     private long mTimeUpdateMs;
     private final int mUpdateInterval;

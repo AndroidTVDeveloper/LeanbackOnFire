@@ -34,16 +34,16 @@ import java.lang.ref.WeakReference;
 import java.util.List;
 
 class NowPlayCardListener implements OnActiveSessionsChangedListener {
-    private int mBannerMaxHeight;
-    private int mBannerMaxWidth;
-    private int mCardMaxHeight;
-    private int mCardMaxWidth;
+    private final int mBannerMaxHeight;
+    private final int mBannerMaxWidth;
+    private final int mCardMaxHeight;
+    private final int mCardMaxWidth;
     private final Context mContext;
     private final boolean mIsTestRunning;
     private MediaController mLastMediaController;
     private final Callback mMediaSessionCallback;
     private Listener mNowPlayCardListener;
-    private float mNowPlayingDefaultDarkening;
+    private final float mNowPlayingDefaultDarkening;
 
     public interface Listener {
         void onClientChanged(boolean z);

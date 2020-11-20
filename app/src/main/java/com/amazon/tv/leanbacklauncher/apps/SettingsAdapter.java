@@ -20,7 +20,7 @@ public class SettingsAdapter extends AppsAdapter {
     private final Handler mHandler = new NetworkUpdateHandler(this);
     private Resources mNetResources;
     private boolean mNetResourcesSet = false;
-    private static String TAG = "SettingsAdapter";
+    private static final String TAG = "SettingsAdapter";
 
     private static class NetworkUpdateHandler extends Handler {
         private final WeakReference<SettingsAdapter> mAdapterRef;

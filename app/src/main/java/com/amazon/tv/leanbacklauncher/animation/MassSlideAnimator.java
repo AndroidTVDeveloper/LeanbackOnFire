@@ -36,7 +36,7 @@ public final class MassSlideAnimator extends PropagatingAnimator<MassSlideAnimat
         private Class<?> mExcludeClass;
         private boolean mFade = true;
         private final ViewGroup mRoot;
-        private Class<?> mTargetClass = ParticipatesInLaunchAnimation.class;
+        private final Class<?> mTargetClass = ParticipatesInLaunchAnimation.class;
 
         public Builder(ViewGroup root) {
             this.mRoot = Preconditions.checkNotNull(root);

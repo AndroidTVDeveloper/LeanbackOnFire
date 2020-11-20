@@ -25,7 +25,7 @@ import com.amazon.tv.leanbacklauncher.wallpaper.AnimatedLayer.AnimationListener;
 
 public class LauncherWallpaper extends FrameLayout implements HomeScrollFractionListener, OnAnimationFinishedListener, AnimationListener, WallpaperDownloader.OnDownloadFinishedListener {
     private WallpaperImage mBackground;
-    private ColorFilterDimmer mDimmer;
+    private final ColorFilterDimmer mDimmer;
     private final WallpaperDownloader mDownloader;
     private AnimatedLayer mFadeMaskExt;
     private boolean mHasBackgroundImage;

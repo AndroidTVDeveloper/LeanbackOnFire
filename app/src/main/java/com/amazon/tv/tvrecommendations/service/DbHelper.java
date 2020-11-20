@@ -28,18 +28,18 @@ import java.util.List;
 import java.util.Map.Entry;
 
 public class DbHelper extends SQLiteOpenHelper {
-    private static boolean DEBUG = false;
-    private static String TAG = "DbHelper";
+    private static final boolean DEBUG = false;
+    private static final String TAG = "DbHelper";
     private static DbHelper sDbHelper = null;
-    private Context mContext;
+    private final Context mContext;
     private final Object mLock;
-    private boolean mMigrationEnabled;
+    private final boolean mMigrationEnabled;
     private Long mMostRecentTimeStamp;
 
     private class GetEntitiesTask extends AsyncTask<Void, Void, Void> {
         private List<String> mBlacklistedPackages = new ArrayList();
         private HashMap<String, Entity> mEntities;
-        private Listener mListener;
+        private final Listener mListener;
 
         public GetEntitiesTask(Listener listener) {
             this.mListener = listener;
@@ -177,7 +177,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     private class RemoveEntityTask extends AsyncTask<Void, Void, Void> {
         boolean mFullRemoval;
-        private String mKey;
+        private final String mKey;
 
         public RemoveEntityTask(String key, boolean fullRemoval) {
             if (DbHelper.DEBUG) {
@@ -221,8 +221,8 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     private class RemoveGroupTask extends AsyncTask<Void, Void, Void> {
-        private String mGroup;
-        private String mKey;
+        private final String mGroup;
+        private final String mKey;
 
         public RemoveGroupTask(String entityKey, String group) {
             this.mKey = entityKey;

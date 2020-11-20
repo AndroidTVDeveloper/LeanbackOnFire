@@ -13,7 +13,7 @@ import com.bumptech.glide.request.target.SizeReadyCallback;
 
 public class RecommendationCardView extends RecommendationView {
     private TvRecommendation mRecommendation;
-    private PackageResourceCache mResourceCache;
+    private final PackageResourceCache mResourceCache;
 
     public RecommendationCardView(Context context) {
         this(context, PackageResourceCache.getInstance(context));

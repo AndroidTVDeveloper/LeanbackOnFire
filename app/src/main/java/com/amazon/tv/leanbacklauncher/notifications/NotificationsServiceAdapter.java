@@ -29,7 +29,7 @@ public abstract class NotificationsServiceAdapter<VH extends ViewHolder> extends
     private AppTrace.TraceTag mNotificationListenerTraceToken;
     private final NotificationsListener mNotificationsListener;
     private final SwitchingRecommendationsClient mRecommendationClient;
-    private RecommendationComparator mRecommendationComparator;
+    private final RecommendationComparator mRecommendationComparator;
     private AppTrace.TraceTag mServiceConnectTraceToken;
 
     public interface RecommendationComparator extends Comparator<TvRecommendation> {

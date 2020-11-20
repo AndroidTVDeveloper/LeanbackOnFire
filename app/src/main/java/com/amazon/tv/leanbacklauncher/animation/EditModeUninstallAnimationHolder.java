@@ -14,11 +14,11 @@ import com.amazon.tv.leanbacklauncher.widget.EditModeView;
 public class EditModeUninstallAnimationHolder {
     private long mAnimationDuration;
     private TranslateAnimation mBannerAnimation;
-    private View mUninstallBanner;
-    private View mUninstallCircle;
-    private View mUninstallIcon;
-    private View mUninstallIconCircle;
-    private TextView mUninstallText;
+    private final View mUninstallBanner;
+    private final View mUninstallCircle;
+    private final View mUninstallIcon;
+    private final View mUninstallIconCircle;
+    private final TextView mUninstallText;
 
     public enum EditModeUninstallState {
         ENTER,
